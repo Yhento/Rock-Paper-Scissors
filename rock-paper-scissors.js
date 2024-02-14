@@ -19,8 +19,11 @@ function getComputerChoice() {
 
 // Create a variable called opponentScore and set it to 0;
 let opponentScore = 0;
+
 // Create a variable called playerScore and set it to 0;
 let playerScore = 0;
+
+let draws = 0;
 
 // CREATE a Function called playGame that calls playRound five times to play five rounds.
 function playGame() {
@@ -61,7 +64,7 @@ function playGame() {
     };
 
     // Play the Round and assign the results to a variable score.
-    console.log(playerSelection, computerSelection);
+    
     let score = playRound(computerSelection, playerSelection);
 
     // Print results to the console.
@@ -70,6 +73,12 @@ function playGame() {
     
   // ENDLOOP
   };
+
+  playerScore > opponentScore ? console.log(`Victory is yours! You won ${playerScore} out of 5 games with ${draws} draws!`) :
+  playerScore < opponentScore ? console.log(`A Miserable Defeat! Your opponent won ${opponentScore} out of 5 games with ${draws} draws!`)
+                              : console.log (`The result is a tie!`);
+    
+  
   
   // CREATE a Function called playRound that takes the variables playerSelection and computerSelection and outputs a Win, Draw, or Loss
   function playRound(computerChoice, playerChoice){
@@ -83,6 +92,7 @@ function playGame() {
         // IF opponentSelection is Rock return "A Draw! Rock cancels Rock."
 
         if (computerChoice == 'Rock') {
+          draws += 1;
           return `A Draw! Rock cancels Rock. Your Score: ${playerScore} Opponent Score: ${opponentScore}`;
         }
 
@@ -114,6 +124,7 @@ function playGame() {
         // IF opponentSelection is Paper return "A Draw! Paper cancels Paper."
 
         else if (computerChoice == 'Paper'){
+          draws += 1;
           return `A Draw! Paper cancels Paper. Your Score: ${playerScore} Opponent Score: ${opponentScore}`
         }
 
@@ -146,6 +157,7 @@ function playGame() {
         // IF opponentSelection is Scissors return "A Draw. Scissors cancels Scissors"
 
         else if (computerChoice == 'Scissors') {
+          draws += 1;
           return `A Draw. Scissors cancels Scissors. Your Score: ${playerScore} Opponent Score: ${opponentScore}`
         }
         break;
