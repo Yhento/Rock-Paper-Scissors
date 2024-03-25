@@ -9,12 +9,14 @@ function getComputerChoice() {
     return choice;
 };
 
-let opponentScore = 0;
-let playerScore = 0;
-let draws = 0;
+
 
 
 function playGame() {
+
+  let opponentScore = 0;
+  let playerScore = 0;
+  let draws = 0;
 
   for ( let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) {
 
