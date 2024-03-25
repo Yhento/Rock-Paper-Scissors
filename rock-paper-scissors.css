@@ -15,7 +15,7 @@ body{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 500px;
+  width: 700px;
   border: 1px solid black;
   text-align: center;
   padding: 10px 10px;
@@ -24,3 +24,10 @@ body{
 
 }
 
+.game-container button {
+  padding: 10px 0;
+}
+
+.results {
+  text-align: left;
+}

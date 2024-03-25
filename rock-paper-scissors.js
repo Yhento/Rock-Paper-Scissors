@@ -13,6 +13,7 @@ function getComputerChoice() {
   let playerScore = 0;
   let draws = 0;
   let score = '';
+  const results = document.querySelector('.results span');
 
 
 function playGame(playerSelection) {
@@ -29,7 +30,7 @@ function playGame(playerSelection) {
      }
     }
     
-    console.log(score);
+    results.innerHTML = `Result: ${score}`;
    
 
     
