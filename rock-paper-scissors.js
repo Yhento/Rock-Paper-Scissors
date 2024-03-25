@@ -9,49 +9,31 @@ function getComputerChoice() {
     return choice;
 };
 
-
-
-
-function playGame() {
-  // Test
   let opponentScore = 0;
   let playerScore = 0;
   let draws = 0;
+  let score = '';
 
-  for ( let roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) {
+
+function playGame(playerSelection) {
+
+  
+
+  
 
     
     computerSelection = getComputerChoice();
 
-    let playerSelection = '';
-    let isRockPaperScissors = false;
-
-    while (!isRockPaperScissors) {
-
-      playerSelection = prompt("Please choose Rock Paper or Scissors")
-
-      playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLocaleLowerCase();
-
-      console.log(playerSelection);
-      
-  
-      if (playerSelection == 'Rock' || playerSelection == 'Paper' || playerSelection == 'Scissors') {
-
-        isRockPaperScissors = true;
-
-      }
-
-    };
+    (playerScore !== 5 && opponentScore !== 5) ? score = playRound(computerSelection, playerSelection) 
+                                               : playerScore > opponentScore ? score = "Congratulations! You've Won!"
+                                                                             : score = "We're Sorry! You Lost!"
     
-    let score = playRound(computerSelection, playerSelection);
 
     console.log(score);
     
-  };
+  
 
-  playerScore > opponentScore ? console.log(`Victory is yours! You won ${playerScore} out of 5 games with ${draws} draws!`) :
-  playerScore < opponentScore ? console.log(`A Miserable Defeat! Your opponent won ${opponentScore} out of 5 games with ${draws} draws!`)
-                              : console.log (`The result is a tie!`);
+          
 
   function playRound(computerChoice, playerChoice){
 
