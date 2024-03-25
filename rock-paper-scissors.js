@@ -17,25 +17,23 @@ function getComputerChoice() {
 
 function playGame(playerSelection) {
 
-  
+  computerSelection = getComputerChoice();
 
-  
-
+    if (playerScore !== 5 && opponentScore !== 5){
+      score = playRound(computerSelection, playerSelection);
+      if (playerScore == 5){
+        score = `Congratulations! You've Won The Game! Final Score is You: ${playerScore} Opponent: ${opponentScore}`;
+     }
+     else if (opponentScore == 5) {
+       score = `Sorry! You Lost! Better Luck Next Time! Final Score is You: ${playerScore} Opponent: ${opponentScore}`;
+     }
+    }
     
-    computerSelection = getComputerChoice();
-
-    (playerScore !== 5 && opponentScore !== 5) ? score = playRound(computerSelection, playerSelection) 
-                                               : playerScore > opponentScore ? score = "Congratulations! You've Won!"
-                                                                             : score = "We're Sorry! You Lost!"
-    
-
     console.log(score);
+   
+
     
-  
-
-          
-
-  function playRound(computerChoice, playerChoice){
+function playRound(computerChoice, playerChoice){
 
     switch (playerChoice) {
 
@@ -96,6 +94,34 @@ function playGame(playerSelection) {
         break;
     };
 
+   
+
   };
 };
-playGame();
+
+let game_container = document.querySelector('.game-container');
+
+game_container.addEventListener('click', (e) => {
+  let target = e.target;
+
+  switch(target.textContent) {
+
+      case 'Rock':
+        playGame('Rock');
+        break;
+      
+      case 'Scissors':
+        playGame('Scissors');
+        break;
+      
+      case 'Paper':
+        playGame('Paper')
+        break;
+  };
+
+
+
+
+
+});
+
