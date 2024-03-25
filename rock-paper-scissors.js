@@ -13,7 +13,7 @@ function getComputerChoice() {
 
 
 function playGame() {
-
+  // Test
   let opponentScore = 0;
   let playerScore = 0;
   let draws = 0;
